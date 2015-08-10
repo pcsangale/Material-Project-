@@ -8,5 +8,11 @@ public class ConversionFactor {
 		return MeterToCentemeter;
 	}
 	
+	public double getYardToCm(){
+		return 91.08;
+	}
 	
+	public double getFeetToCm(){
+	return 30.36;
+	}
 }
