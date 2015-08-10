@@ -24,6 +24,13 @@ public class Feet implements Quantity{
 		
 		this.feet=value/(new ConversionFactor().getFeetToCm());	
 	return this;}
+
+	@Override
+	public Object addition(Quantity obj1) {
+		double value=obj1.ToCentimeter();
+		//System.out.println(this.feet+value/new ConversionFactor().getFeetToCm());
+		return new Feet(this.feet+value/new ConversionFactor().getFeetToCm()); 
+	}
 	
 	
 }

@@ -31,6 +31,13 @@ public class Centimeter implements Quantity{
 		this.cm= value;
 	return this;
 	}
+
+	@Override
+	public Object addition(Quantity obj1) {
+		double value=obj1.ToCentimeter();
+		//System.out.println(this.cm+value);
+		return new Centimeter(this.cm+value); 	
+	}
 	
 	
 	

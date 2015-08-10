@@ -19,5 +19,8 @@ public class Material {
 		return obj2.convert( obj1);
 	}
 	
-	
+	public Object addToMeasure(Quantity obj1, Quantity obj2){
+		
+		return obj1.addition(obj2);
+	}
 }

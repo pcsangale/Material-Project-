@@ -32,6 +32,13 @@ public class Yard implements Quantity {
 	return this;
 	}
 
+	@Override
+	public Object addition(Quantity obj1) {
+		double value=obj1.ToCentimeter();
+		//System.out.println(this.yard+value/new ConversionFactor().getYardToCm());
+		return new Yard(this.yard+value/new ConversionFactor().getYardToCm()); 
+	}
+
 	
 	
 }
