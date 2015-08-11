@@ -2,7 +2,7 @@ package Programs;
 
 import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
-public class Yard implements Quantity {
+public class Yard implements Length {
 
  private double yard;
 	
@@ -17,7 +17,7 @@ public class Yard implements Quantity {
 
 
 	@Override
-	public double ToCentimeter() {
+	public double ToLowerMeasure() {
 		
 		return this.yard* new ConversionFactor().getYardToCm();
 	}
@@ -25,20 +25,22 @@ public class Yard implements Quantity {
 
 
 	@Override
-	public Object convert(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object convert(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		
 		this.yard= value/(new ConversionFactor().getYardToCm());
 	return this;
 	}
 
 	@Override
-	public Object addition(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object addition(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		//System.out.println(this.yard+value/new ConversionFactor().getYardToCm());
 		return new Yard(this.yard+value/new ConversionFactor().getYardToCm()); 
 	}
 
+	
+	
 	
 	
 }

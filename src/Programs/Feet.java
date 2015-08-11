@@ -1,6 +1,6 @@
 package Programs;
 
-public class Feet implements Quantity{
+public class Feet implements Length{
 
 	private double feet;
 
@@ -13,24 +13,27 @@ public class Feet implements Quantity{
 	}
 
 	@Override
-	public double ToCentimeter() {
+	public double ToLowerMeasure() {
 		
 		return this.feet*new ConversionFactor().getFeetToCm();
 	}
 
 	@Override
-	public Object convert(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object convert(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		
 		this.feet=value/(new ConversionFactor().getFeetToCm());	
 	return this;}
 
 	@Override
-	public Object addition(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object addition(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		//System.out.println(this.feet+value/new ConversionFactor().getFeetToCm());
 		return new Feet(this.feet+value/new ConversionFactor().getFeetToCm()); 
 	}
+
+	
+
 	
 	
 }

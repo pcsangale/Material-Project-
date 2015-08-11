@@ -1,6 +1,6 @@
 package Programs;
 
-public class Meter implements Quantity{
+public class Meter implements Length{
 	private double meter;
 
 	public void meter(){}
@@ -19,25 +19,29 @@ public class Meter implements Quantity{
 	}
 
 	@Override
-	public double ToCentimeter() {
+	public double ToLowerMeasure() {
 	ConversionFactor cf = new ConversionFactor();	
 		return this.meter*cf.getMeterToCentemeter();
 	}
 
 	@Override
-	public Object convert(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object convert(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		
 		this.meter= value/(new ConversionFactor().getMeterToCentemeter());
 	return this;
 	}
 
 	@Override
-	public Object addition(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object addition(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		System.out.println(this.meter+value/new ConversionFactor().getMeterToCentemeter());
 		return new Meter(this.meter+value/new ConversionFactor().getMeterToCentemeter()); 
 	}
+
+	
+
+	
 	
 	
 }

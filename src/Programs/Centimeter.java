@@ -1,6 +1,6 @@
 package Programs;
 
-public class Centimeter implements Quantity{
+public class Centimeter implements Length{
 
 	private double cm;
 	
@@ -19,25 +19,26 @@ public class Centimeter implements Quantity{
 	}
 
 	@Override
-	public double ToCentimeter() {
+	public double ToLowerMeasure() {
 		
 		return this.cm;
 	}
 
 	@Override
-	public Object convert(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object convert(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		
 		this.cm= value;
 	return this;
 	}
 
 	@Override
-	public Object addition(Quantity obj1) {
-		double value=obj1.ToCentimeter();
+	public Object addition(Length obj1) {
+		double value=obj1.ToLowerMeasure();
 		//System.out.println(this.cm+value);
 		return new Centimeter(this.cm+value); 	
 	}
+
 	
 	
 	
