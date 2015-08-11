@@ -3,7 +3,7 @@ package Programs;
 public class Tsp implements Volume{
 
 	private double tsp;
-	private double conversionToTsp;
+	private double conversionToTsp=1;
 	public Tsp(int tsp) {
 		super();
 		this.tsp = tsp;
@@ -26,7 +26,7 @@ public class Tsp implements Volume{
 	@Override
 	public Object convert(Volume obj1) {
 		double value=obj1.ToLowerMeasure();
-		
+		System.out.println("***");
 		this.tsp= value/conversionToTsp;
 		System.out.println(this.tsp);
 	return this;
@@ -34,7 +34,9 @@ public class Tsp implements Volume{
 
 	@Override
 	public Object addition(Volume obj1) {
+		
 		double value=obj1.ToLowerMeasure();
+		
 		System.out.println(this.tsp+value/conversionToTsp);
 		return new Tsp(this.tsp+value/conversionToTsp); 
 	}

@@ -23,13 +23,15 @@ public class Cup implements Volume{
 		double value=obj1.ToLowerMeasure();
 		
 		this.cup= value/conversionToTsp;
+		
 		return this;
 	}
 
 	@Override
 	public Object addition(Volume obj1) {
-		// TODO Auto-generated method stub
-		return null;
+		double value=obj1.ToLowerMeasure();
+		System.out.println("***"+this.cup+value/conversionToTsp);
+		return new Cup(this.cup+value/conversionToTsp); 
 	}
 
 	

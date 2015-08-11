@@ -30,8 +30,9 @@ public class OZ implements Volume{
 
 	@Override
 	public Object addition(Volume obj1) {
-		// TODO Auto-generated method stub
-		return null;
+		double value=obj1.ToLowerMeasure();
+		System.out.println(this.oz+value/conversionToTsp);
+		return new OZ(this.oz+value/conversionToTsp); 
 	}
 	
 	

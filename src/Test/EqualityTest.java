@@ -23,12 +23,11 @@ public class EqualityTest {
 		
 	}
 	
-/*
 	@Test
 	public void shouldReturnCm(){
 		Material m= new Material();
 	
-		Quantity meter = new Meter(1);
+		Length meter = new Meter(1);
 		
 		
 		
@@ -40,16 +39,15 @@ public class EqualityTest {
 	public void shouldReturnYard(){
 		Material m= new Material();
 	
-		Quantity meter = new Meter(1);
+		Length meter = new Meter(1);
 		
 		
 		
 		Assert.assertEquals(true ,m.toConertInto(meter,new Yard()) instanceof Yard);
 	
-		 Yard yard=(Yard) m.ToConertInto(meter,new Yard());
 		
-		Assert.assertEquals(true, m.measureEqual(yard,meter));
-	}
+		
+			}
 	
 	
 	@Test
@@ -57,7 +55,7 @@ public class EqualityTest {
 		Material m = new Material();
 		Meter meter = new Meter(2);
 		Centimeter cm= new Centimeter(100);
-		Quantity cm2= new Centimeter(300);
+		Length cm2= new Centimeter(300);
 		
 		Assert.assertEquals(true ,m.addToMeasure(cm, meter) instanceof Centimeter);
 	
@@ -67,8 +65,8 @@ public class EqualityTest {
 	public void TestAddResultAndReturnToYardObject(){
 		Material m = new Material();
 		
-		Quantity cm= new Centimeter(100);
-		Quantity yard= new Yard(1);
+		Length cm= new Centimeter(100);
+		Length yard= new Yard(1);
 		
 		Assert.assertEquals(true ,m.addToMeasure(yard, cm) instanceof Yard);
 	
@@ -78,8 +76,8 @@ public class EqualityTest {
 	public void TestAddResultAndReturnToFeetObject(){
 		Material m = new Material();
 		
-		Quantity cm= new Centimeter(100);
-		Quantity feet= new Feet(1);
+		Length cm= new Centimeter(100);
+		Length feet= new Feet(1);
 		
 		Assert.assertEquals(true ,m.addToMeasure(feet, cm) instanceof Feet);
 	
@@ -89,8 +87,8 @@ public class EqualityTest {
 	public void TestAddResultFeetAndYardObject(){
 		Material m = new Material();
 		
-		Quantity yard= new Yard(2);
-		Quantity feet= new Feet(1);
+		Length yard= new Yard(2);
+		Length feet= new Feet(1);
 		
 		Assert.assertEquals(true ,m.addToMeasure(feet, yard) instanceof Feet);
 	
@@ -102,8 +100,8 @@ public class EqualityTest {
 	public void TestAddResultCmAndCmObject(){
 		Material m = new Material();
 		
-		Quantity cm1= new Centimeter(200);
-		Quantity cm2= new Centimeter(1);
+		Length cm1= new Centimeter(200);
+		Length cm2= new Centimeter(1);
 		
 		Assert.assertEquals(true ,m.addToMeasure(cm1, cm2) instanceof Centimeter);
 	
@@ -113,13 +111,13 @@ public class EqualityTest {
 	public void TestAddResultMeterToCmObject(){
 		Material m = new Material();
 		
-		Quantity cm1= new Centimeter(2);
-		Quantity meter= new Meter(1);
+		Length cm1= new Centimeter(2);
+		Length meter= new Meter(1);
 		
 		Assert.assertEquals(true ,m.addToMeasure(meter, cm1) instanceof Meter);
 	
 	}
-	*/
+	
 	
 	@Test
 	public void shouldCheckEqualityOfVolume(){
@@ -131,15 +129,26 @@ public class EqualityTest {
 		
 	}
 	
-	/*@Test
-	public void shouldReturnMeter(){
+	@Test
+	public void shouldReturnTsp(){
 		Material m= new Material();
 	
 		Volume tbsp= new Tbsp(1);
 		
 		Assert.assertEquals(true ,m.toConertInto(tbsp,new Tsp()) instanceof Tsp);
 		
-	}*/
+	}
+	
+	
+	@Test
+	public void shouldReturnCup(){
+		Material m= new Material();
+	
+		Volume tbsp= new Tbsp(1);
+		
+		Assert.assertEquals(true ,m.toConertInto(tbsp,new Cup()) instanceof Cup);
+		
+	}
 	
 
 }

@@ -1,10 +1,5 @@
 package Programs;
 
-import javax.xml.transform.Templates;
-
-import org.hamcrest.core.IsInstanceOf;
-
-import Test.*;
 public class Material {
 
 	public boolean measureEqual(Length obj1, Length obj2){
@@ -21,8 +16,17 @@ public class Material {
 		return obj2.convert( obj1);
 	}
 	
-	/*public Object addToMeasure(Quantity obj1, Quantity obj2){
+	public Object toConertInto(Volume obj1, Volume obj2){
+		System.out.println("Here");
+		return obj2.convert( obj1);
+	}
+	
+	public Object addToMeasure(Length obj1, Length obj2){
 		
 		return obj1.addition(obj2);
-	}*/
+	}
+	public Object addToMeasure(Volume obj1, Volume obj2){
+		
+		return obj1.addition(obj2);
+	}
 }
