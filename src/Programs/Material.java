@@ -29,4 +29,13 @@ public class Material {
 		
 		return obj1.addition(obj2);
 	}
+	
+	public boolean measureEqual(TemperatureQuantity obj1, TemperatureQuantity obj2){
+		double value1= obj1.ToLowerMeasure();
+		double value2= obj2.ToLowerMeasure();
+		
+		 	
+	return value1==value2;	
+	}
+	
 }

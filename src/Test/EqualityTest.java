@@ -149,6 +149,41 @@ public class EqualityTest {
 		Assert.assertEquals(true ,m.toConertInto(tbsp,new Cup()) instanceof Cup);
 		
 	}
+
+	@Test
+	public void TestAddResultTspObject(){
+		Material m = new Material();
+		
+		Volume tsp = new Tsp(3);
+		Volume tbsp = new Tbsp(1);
+		
+		
+		Assert.assertEquals(true ,m.addToMeasure(tsp, tbsp) instanceof Tsp);
+	
+	}
+	
+	@Test
+	public void TestAddResultCupObject(){
+		Material m = new Material();
+		
+		Volume tsp = new Tsp(48);
+		Volume cup = new Cup(1);
+		
+		
+		Assert.assertEquals(true ,m.addToMeasure(tsp, cup) instanceof Tsp);
+	
+	}
+	
+	@Test
+	public void TestReturnEqualTemperature(){
+		Material m = new Material();
+		
+		TemperatureQuantity d = new Farenhite(212);
+		TemperatureQuantity f = new DegreeCelsius(100);
+		
+		
+		Assert.assertEquals(true ,m.measureEqual(d, f));
+	}
 	
 
 }
